@@ -2,7 +2,7 @@
 
 ## Introduction and Inspiration
 
-Have you ever been planning to go outside, when you are suddenly stumped by what to wear? Ever had to peek outside to assess the temperature in order to decide what to wear? **_Well, look no more, for the solution is here!_** What Should I Wear is a website made by Krishnan Shankar, Michael Spence, Sammy Dods, and Hamza Khan that determines what clothing you should be wearing. Sometimes it will tell you to wear a T-Shirt, Shorts, maybe a Jacket? It will even tell you when to carry an _umbrella_! It all depends on your location's current weather. The inspiration for our project was \_\_\_
+Have you ever been planning to go outside, when you are suddenly stumped by what to wear? Ever had to peek outside to assess the temperature in order to decide what to wear? **_Well, look no more, for the solution is here!_** What Should I Wear is a website made by Krishnan Shankar, Michael Spence, Sammy Dods, and Hamza Khan that determines what clothing you should be wearing. Sometimes it will tell you to wear a T-Shirt, Shorts, maybe a Jacket? It will even tell you when to carry an _umbrella_! It all depends on your location's current weather.
 
 ## How it works
 
@@ -15,31 +15,37 @@ For the backend of our project, we used Python's [Flask](https://flask.palletspr
 
 ## Challenges we ran into
 
-Some challenges we had during development were accessing the location of users. At the start, we tried using a Flask extension to try and get the location data, but we could never get it to work. Then, we moved to the javascript approach, by trying to send a post request to send the location data from the frontend to the backend. Finally, after looking up tons of documentation and posts on [Stack Overflow](https://stackoverflow.com), we finally got the location system to work.  
-  
+Some challenges we had during development were accessing the location of users. At the start, we tried using a Flask extension to try and get the location data, but we could never get it to work. Then, we moved to the javascript approach, by trying to send a post request to send the location data from the frontend to the backend. Finally, after looking up tons of documentation and posts on [Stack Overflow](https://stackoverflow.com), we finally got the location system to work.
+
 Another major challenge we ran into was trying to use a Weather API. We started off with using [weather.gov](https://weather.gov), but we faced many problems, data was jumbled and often inaccurate, and it would just crash when given certain locations. After doing our best to figure it out, we scrapped the approach and moved on to [WeatherAPI](https://weatherapi.com). This was way easier to use, gave more accurate data, and solved all our problems.
 
 ## Accomplishments that we're proud of
 
-The first major accomplishment we are proud of is getting the location detection to work. As we kept spending hours and hours on trying to solve this, we realized why popular weather services like [weather.gov](https://weather.gov) ask you to enter your location instead of detecting it. However, we were determined to figure it out, and after a lot of hard work, we finally did it.  
-  
+The first major accomplishment we are proud of is getting the location detection to work. As we kept spending hours and hours on trying to solve this, we realized why popular weather services like [weather.gov](https://weather.gov) ask you to enter your location instead of detecting it. However, we were determined to figure it out, and after a lot of hard work, we finally did it.
+
 Another major accomplishment we are proud of is getting Flask to work with [Glitch](https://glitch.com). We have all known that Glitch is a way to host your personal website for free, but we thought that it only worked with Node.js. However, we wanted to learn something new like Flask, so that we can expand our knowledge and learn something new. We started by trying to use Git, Github, VSCode LiveShare, and so much more, but they were so hard to use when you need to collaborate with your teammates. Finally, we figured out how to run a Flask app in [Glitch](https://glitch.com), and we continued coding, way faster than usual.
 
 ## What we learned
 
-For most of us in the group it was our first hackathon. It was a little daunting but we were all excited for it. We learned a lot about the proccesses behind full stack development, including API calls, backend scripts, front end stylings, and so much more. There was a lot of stuff to learn, but we figured it out. 
+For most of us in the group it was our first hackathon. It was a little daunting but we were all excited for it. We learned a lot about the proccesses behind full stack development, including API calls, backend scripts, frontend development, how the two interact and so much more. There was a lot of stuff to learn, but we challanged ourselves and never looked back!
 
 ## Our Roles
 
 ### Krishnan Shankar
 
-I worked on almost all of the backend for this project, including the Flask setup, API calls, location management, and our _special algorithm_ to determine what to wear. I also set up the project on Glitch, and helped a little bit with the HTML to add references to Flask.
+I worked on almost all of the backend for this project, including the Flask setup, API calls, location management, and our _special algorithm_ to determine what to wear. I also set up the project on Glitch, so that we can all collaborate together. Finally, I added some jinja2 code to the HTML in order to display Python data in HTML.
 
 ### Michael Spence
 
+I worked on the design and look of the project. I suggested ideas for improvements to the UI, in order to start conversations to improve the UI of the project and make the project look more appealing to the average user. I also used CSS to style the website, to make sure it looked good in all weather conditions.
+
 ### Sammy Dods
 
+I worked on a lot of the front end of the project. I oversaw the design of layout, which was sketched out over [AWW App](https://awwapp.com/), an online whiteboard. We decided that a 3 div layout would be able to clearly present relevant information, and give a pleasant minimal appeal. I built the foundation of the website in HTML, and then worked with Michael on styling it in CSS. 
+
 ### Hamza Khan
+
+I worked on helping with both the backend and frontend. I researched APIs, modules, and other resources to help Krishnan with the backend. I also worked with Michael and Sammy to format the website, adding CSS to make it look better.
 
 ## What's next for What Should I Wear
 
