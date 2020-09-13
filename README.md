@@ -2,7 +2,7 @@
 
 ## Introduction and Inspiration
 
-Have you ever been planning to go outside, when you are suddenly stumped by what to wear? Ever had to peek outside to assess the temperature in order to decide what to wear? **_Well, look no more, for the solution is here!_** What Should I Wear is a website made by Krishnan Shankar, Michael Spence, Sammy Dods, and Hamza Khan that determines what clothing you should be wearing. Sometimes it will tell you to wear a T-Shirt, Shorts, maybe a Jacket? It will even tell you when to carry an _umbrella_! It all depends on your location's current weather. The inspiration for our project was \_\_\_
+Have you ever been planning to go outside, when you are suddenly stumped by what to wear? Ever had to peek outside to assess the temperature in order to decide what to wear? **_Well, look no more, for the solution is here!_** What Should I Wear is a website made by Krishnan Shankar, Michael Spence, Sammy Dods, and Hamza Khan that determines what clothing you should be wearing. Sometimes it will tell you to wear a T-Shirt, Shorts, maybe a Jacket? It will even tell you when to carry an _umbrella_! It all depends on your location's current weather.
 
 ## How it works
 
