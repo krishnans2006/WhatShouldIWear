@@ -50,5 +50,5 @@ I worked on helping with both the backend and frontend. I researched APIs, modul
 ## What's next for What Should I Wear
 
 Next for What Should I Wear is a plan to customize preferences for each user. After the user comes back home, our website will ask them how they felt, like did they feel too cold, too hot, and by how much. By adding an optional login, we can connect to a database to store the temperatures when the user decides to use a sweater instead of a long sleeve shirt. This will allow What Should I Wear to be different for every person, since no two people are alike. 
-We could also turn this into a mobile app/widget for ease of access for the user to the app. 
+We could also turn this into a mobile app/widget for ease of access for the user, it's much easier to look at your phones homepage than to go to a website.
 **Thank You Judges for your time, and we hope you like our project!**
