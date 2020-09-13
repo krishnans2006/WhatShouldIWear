@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>What Should I Wear - Helping People Wear The Right Clothing Since 2020</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="https://cdn.glitch.com/bca20209-1238-487d-97cb-425b611020e4%2Ftshirt.png?v=1599969124286">
+    <meta property="og:title" content="What Should I Wear - Helping People Wear The Right Clothing Since 2020" />
+    <meta property="og:url" content="https://what-should-i-wear.glitch.me" />
+    <meta property="og:image" content="https://cdn.glitch.com/bca20209-1238-487d-97cb-425b611020e4%2Ftshirt.png?v=1599969124286" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Should you wear a T-Shirt or Sweater today? What Should I Wear uses your location to determine what type of clothing is perfect for you. With other important weather stats as well, What Should I Wear can really make your life more peaceful." />
+    {% if data["current"]["is_day"] == 0 %}
+    <style>
+      body {
+        background-color: black;
+        text-color: white;
+        background-image: url("{{data['current']['condition']['icon']}}");
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+    </style>
+    {% else %}
+    <style>
+      body {
+        background-color: rgba(79, 195, 247, 1);
+        text-color: white;
+        background-image: url("{{data['current']['condition']['icon']}}");
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+    </style>
+    {% endif %}
+    <style>
+      h1 {
+        color: red;
+      }
+
+      p.weather {
+        display: inline;
+        font-weight: bold;
+        font-size: 3rem;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+          1px 1px 0 #000;
+
+      }
+
+      p.temp {
+        display: inline;
+        font-weight: bold;
+        font-size: 3rem;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+          1px 1px 0 #000;
+      }
+      
+      p.location {
+        
+        display: inline;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+          1px 1px 0 #000;
+        
+      }
+      
+      p.recommendation {
+        
+        display: inline;
+        font-weight: bold;
+        font-size: 4rem;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+          1px 1px 0 #000;
+        
+      }
+
+      .leftdiv {
+        float: left;
+        background-color: gray;
+        border: solid black;
+        text-align: center;
+        color: white;
+        font-family: "Grandstander";
+        width: 20%;
+      }
+      .middlediv {
+        float: center;
+        vertical-align: middle;
+        text-align: center;
+        background-color: gray;
+        border: solid black;
+        text-align: top;
+        color: white;
+        font-family: "Grandstander";
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+
+      }
+      .rightdiv {
+        border: solid black;
+        vertical-align: top;
+        background-color: gray;
+        float: right;
+        text-align: right;
+        color: white;
+        font-family: "Grandstander";
+        width: 15%;
+      }
+      div {
+        background-color: 009900;
+        width: 30%;
+        padding: 1%;
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="leftdiv">
+      <p class="weather">
+        {% if nlc %}
+        No Location Available!
+        {% else %}
+        {{data["current"]["condition"]["text"]}}
+        {% endif %}
+      </p><br>
+
+      <p class="temp">
+        {% if not nlc %}
+        {{data["current"]["temp_f"]}}°F 
+        {{data["current"]["temp_c"]}}°C
+        {% endif %}
+      </p>
+
+      <!--       <p class="detailedWeather">
+        {{data["detailedForecast"]}}
+      </p> -->
+    </div>
+
+    <div class="middlediv">
+      <p class = "recommendation">
+        {% if nlc %}
+        Please enable Location Services by clicking on the Lock on the left on the address bar
+        {% else %}
+        {{sentence}}
+        {% endif %}
+      </p>
+    </div>
+
+    <div class="rightdiv">
+      <p class = "location">
+      {{data["location"]["name"]}} {{data["location"]["region"]}}, {{data["location"]["country"]}}
+      </p>
+      <p>
+      Feels Like: {{data["current"]["feelslike_f"]}}F {{data["current"]["feelslike_c"]}}C<br>
+      Precipitation: {{data["current"]["precip_in"]}}in {{data["current"]["precip_mm"]}}mm<br>
+      Gust: {{data["current"]["gust_mph"]}}MPH {{data["current"]["gust_kph"]}}KPH<br>
+      Humidity: {{data["current"]["humidity"]}}%<br>
+      Visibility: {{data["current"]["vis_miles"]}} Miles {{data["current"]["vis_km"]}}km<br>
+      UV: {{data["current"]["uv"]}}<br>
+      Pressure: {{data["current"]["pressure_mb"]}}mb
+      </p>
+      
+    </div>
+    
+
+ .   <script>
+      var x = document.getElementById("demo");
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(transmitPosition);
+        }
+      }
+
+      function transmitPosition(position) {
+        console.log("Success");
+        console.log("Lat: " + position.coords.latitude);
+        console.log("Lng: " + position.coords.longitude);
+        fetch("/save_location", {
+          method: "POST",
+          body: JSON.stringify({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          }),
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          }
+        });
+      }
+      getLocation();
+  </body>
+</html>
+ 
