@@ -45,8 +45,10 @@ I worked on a lot of the front end of the project. I oversaw the design of layou
 
 ### Hamza Khan
 
-I worked on helping with both the backend and frontend. I researched APIs, modules, and other resources to help Krishnan with the backend. I also worked with Michael and Sammy to format the website, adding CSS to make it look better.
+I worked on helping with both the backend and frontend. I researched APIs, modules, and other resources to help Krishnan with the backend, making sure the resources are compatible and work in every country/area. I also worked with Michael and Sammy to format the website, adding CSS to make it look better.
 
 ## What's next for What Should I Wear
 
-Next for What Should I Wear is a plan to customize preferences for each user. After the user comes back home, our website will ask them how they felt, like did they feel too cold, too hot, and by how much. By adding an optional login, we can connect to a database to store the temperatures when the user decides to use a sweater instead of a long sleeve shirt. This will allow What Should I Wear to be different for every person, since no two people are alike. **Thank You Judges for your time, and we hope you like our project!**
+Next for What Should I Wear is a plan to customize preferences for each user. After the user comes back home, our website will ask them how they felt, like did they feel too cold, too hot, and by how much. By adding an optional login, we can connect to a database to store the temperatures when the user decides to use a sweater instead of a long sleeve shirt. This will allow What Should I Wear to be different for every person, since no two people are alike. 
+We could also turn this into a mobile app/widget for ease of access for the user to the app. 
+**Thank You Judges for your time, and we hope you like our project!**
