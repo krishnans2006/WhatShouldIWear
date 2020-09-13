@@ -1,5 +1,4 @@
-# THE CODE IS SO SPAGHETTI IT HAS STARTED SPEAKING ITALIAN
-from flask import Flask, request, render_template, redirect, url_for, jsonify, session
+from flask import Flask, request, render_template, redirect, url_for, session
 
 import os
 import json
@@ -19,17 +18,17 @@ def index():
     no_loc_available = False
   except:
     lat, lng = 9.5127, 122.8797
-  data_now = json.loads(requests.get("http://api.weatherapi.com/v1/current.json?key=83fd32f4726d43e8bc320912201309&q={0},{1}".format(lat, lng)).content)
+  data_now = json.loads(requests.get("http://api.weatherapi.com/v1/current.json?key={0}&q={1},{2}".format(os.getenv("WEATHERAPI_KEY"), lat, lng)).content)
   factors = { "rain": None}
   if data_now["current"]["precip_mm"] > 0:
     factors["rain"] = True
-  if data_now["current"]["temp_f"] > 80:
+  if data_now["current"]["feelslike_f"] > 80:
     factors["clothing"] = "Shorts"
-  elif data_now["current"]["temp_f"] > 65:
+  elif data_now["current"]["feelslike_f"] > 65:
     factors["clothing"] = "T-Shirt"
-  elif data_now["current"]["temp_f"] > 45:
+  elif data_now["current"]["feelslike_f"] > 45:
     factors["clothing"] = "Long Sleeve"
-  elif data_now["current"]["temp_f"] > 25:
+  elif data_now["current"]["feelslike_f"] > 25:
     factors["clothing"] = "Sweater"
   else:
     factors["clothing"] = "Jacket"

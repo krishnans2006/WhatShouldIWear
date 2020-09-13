@@ -1,37 +1,46 @@
-Welcome to Glitch
-=================
+# What Should I Wear
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
+## Introduction and Inspiration
 
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
+Have you ever been planning to go outside, when you are suddenly stumped by what to wear? Ever had to peek outside to assess the temperature in order to decide what to wear? **_Well, look no more, for the solution is here!_** What Should I Wear is a website made by Krishnan Shankar, Michael Spence, Sammy Dods, and Hamza Khan that determines what clothing you should be wearing. Sometimes it will tell you to wear a T-Shirt, Shorts, maybe a Jacket? It will even tell you when to carry an _umbrella_! It all depends on your location's current weather. The inspiration for our project was \_\_\_
 
-Find out more [about Glitch](https://glitch.com/about).
+## How it works
 
+What Should I Wear does many things to ensure you are comfortable going outside, without needing to reconsider. First, What Should You Wear will ask for your location, in order to get the current weather for your location. To perform this task, it will use [WeatherAPI](https://weatherapi.com) to retreive the weather.  
+After retreiving the weather for your location, What Should I Wear will use a _special algorithm_ to determine the ideal clothing to wear at that moment. It will also display some weather stats, such as temperature, feels like temperature, precipitation, gust, humidity, and so much more!
 
-Your Project
-------------
+## How we built it
 
-### ← README.md
+For the backend of our project, we used Python's [Flask](https://flask.palletsprojects.com/) framework, a lightweight framework that allows you to host websites while integrating it with Python code. We also used [Glitch](https://glitch.com), a Google Docs-like IDE for collaborative coding, to host our website. We used [WeatherAPI](https://weatherapi.com) to get weather data for locations, and we used the Python requests module to use get requests for accessing the APIs. We also used python-dotenv, json, and os to get our code working.
 
-That's this file, where you can tell people what your cool website does and how you built it.
+## Challenges we ran into
 
-### ← index.html
+Some challenges we had during development were accessing the location of users. At the start, we tried using a Flask extension to try and get the location data, but we could never get it to work. Then, we moved to the javascript approach, by trying to send a post request to send the location data from the frontend to the backend. Finally, after looking up tons of documentation and posts on [Stack Overflow](https://stackoverflow.com), we finally got the location system to work.  
+  
+Another major challenge we ran into was trying to use a Weather API. We started off with using [weather.gov](https://weather.gov), but we faced many problems, data was jumbled and often inaccurate, and it would just crash when given certain locations. After doing our best to figure it out, we scrapped the approach and moved on to [WeatherAPI](https://weatherapi.com). This was way easier to use, gave more accurate data, and solved all our problems.
 
-Where you'll write the content of your website. 
+## Accomplishments that we're proud of
 
-### ← style.css
+The first major accomplishment we are proud of is getting the location detection to work. As we kept spending hours and hours on trying to solve this, we realized why popular weather services like [weather.gov](https://weather.gov) ask you to enter your location instead of detecting it. However, we were determined to figure it out, and after a lot of hard work, we finally did it.  
+  
+Another major accomplishment we are proud of is getting Flask to work with [Glitch](https://glitch.com). We have all known that Glitch is a way to host your personal website for free, but we thought that it only worked with Node.js. However, we wanted to learn something new like Flask, so that we can expand our knowledge and learn something new. We started by trying to use Git, Github, VSCode LiveShare, and so much more, but they were so hard to use when you need to collaborate with your teammates. Finally, we figured out how to run a Flask app in [Glitch](https://glitch.com), and we continued coding, way faster than usual.
 
-CSS files add styling rules to your content.
+## What we learned
 
-### ← script.js
+For most of us in the group it was our first hackathon. It was a little daunting but we were all excited for it. We learned a lot about the proccesses behind full stack development, including API calls, backend scripts, front end stylings, and so much more. There was a lot of stuff to learn, but we figured it out. 
 
-If you're feeling fancy you can add interactivity to your site with JavaScript.
+## Our Roles
 
-### ← assets
+### Krishnan Shankar
 
-Drag in `assets`, like images or music, to add them to your project
+I worked on almost all of the backend for this project, including the Flask setup, API calls, location management, and our _special algorithm_ to determine what to wear. I also set up the project on Glitch, and helped a little bit with the HTML to add references to Flask.
 
-Made by [Glitch](https://glitch.com/)
--------------------
+### Michael Spence
 
-\ ゜o゜)ノ
+### Sammy Dods
+
+### Hamza Khan
+
+## What's next for What Should I Wear
+
+Next for What Should I Wear is a plan to customize preferences for each user. After the user comes back home, our website will ask them how they felt, like did they feel too cold, too hot, and by how much. By adding an optional login, we can connect to a database to store the temperatures when the user decides to use a sweater instead of a long sleeve shirt. This will allow What Should I Wear to be different for every person, since no two people are alike. **Thank You Judges for your time, and we hope you like our project!**
