@@ -144,7 +144,7 @@
     <div class="middlediv">
       <p class = "recommendation">
         {% if nlc %}
-        Please enable Location Services by clicking on the Lock on the left on the address bar
+        Please enable Location Services, then Refresh the page
         {% else %}
         {{sentence}}
         {% endif %}
@@ -152,6 +152,14 @@
     </div>
 
     <div class="rightdiv">
+      {% if nlc %}
+      <p class="location">
+        How to enable location Services:
+      </p>
+      <p>
+        A popup should show up, asking you for your location. If it doesn't, find the lock icon on your browser. Then, click on it. If there is a Dropdown for Location, choose allow. If not, click on Site Settings, and scroll down the new tab. There should be a dropdown for location here. Choose allow. Then, manually refresh the page, and voila! You now know what to wear today!
+      </p>
+      {% else %}
       <p class = "location">
       {{data["location"]["name"]}} {{data["location"]["region"]}}, {{data["location"]["country"]}}
       </p>
@@ -164,22 +172,20 @@
       UV: {{data["current"]["uv"]}}<br>
       Pressure: {{data["current"]["pressure_mb"]}}mb
       </p>
-      
+      {% endif %}
     </div>
     
 
  .   <script>
-      var x = document.getElementById("demo");
       function getLocation() {
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(transmitPosition);
+          console.log({{nlc}})
+          location.reload({{nlc}});
         }
       }
 
       function transmitPosition(position) {
-        console.log("Success");
-        console.log("Lat: " + position.coords.latitude);
-        console.log("Lng: " + position.coords.longitude);
         fetch("/save_location", {
           method: "POST",
           body: JSON.stringify({
@@ -193,6 +199,7 @@
         });
       }
       getLocation();
+    </script>
   </body>
 </html>
  
