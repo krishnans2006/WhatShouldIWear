@@ -6,7 +6,11 @@
       href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    
+        <!-- import the normalize stylesheet -->
+    <link rel = "stylesheet" href="/normalize.css">
     <link rel="shortcut icon" href="https://cdn.glitch.com/bca20209-1238-487d-97cb-425b611020e4%2Ftshirt.png?v=1599969124286">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:title" content="What Should I Wear - Helping People Wear The Right Clothing Since 2020" />
     <meta property="og:url" content="https://what-should-i-wear.glitch.me" />
     <meta property="og:image" content="https://cdn.glitch.com/bca20209-1238-487d-97cb-425b611020e4%2Ftshirt.png?v=1599969124286" />
@@ -43,7 +47,7 @@
       p.weather {
         display: inline;
         font-weight: bold;
-        font-size: 3rem;
+        font-size: 1.5rem;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
           1px 1px 0 #000;
 
@@ -52,7 +56,7 @@
       p.temp {
         display: inline;
         font-weight: bold;
-        font-size: 3rem;
+        font-size: 1.5rem;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
           1px 1px 0 #000;
       }
@@ -71,55 +75,107 @@
         
         display: inline;
         font-weight: bold;
-        font-size: 4rem;
+        font-size: 2.8rem;
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
           1px 1px 0 #000;
         
       }
+      
+      .weather-info{
+        background-color: gray;
+        border: solid black;
+        color: white;
+        font-family: "Grandstander";
+        margin: 0 auto;
+        max-width: 1000px;
+        text-align: center;
+        background-image: url("{{data['current']['condition']['icon']}}");
+        background-blend-mode: multiply;
+        line-height: 1.6;
 
-      .leftdiv {
-        float: left;
-        background-color: gray;
-        border: solid black;
-        text-align: center;
-        color: white;
-        font-family: "Grandstander";
-        width: 20%;
+        
+        
       }
+      
+      .weather-info p{
+        
+        /*font-size: 1em;*/
+        
+        
+      }
+      
+      @media (min-width: 1000px) {
+      .weather-info {
+            
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas:
+          "clothes data"
+          "desc data";
+        grid-column-gap: 2em;
+        
+        }
+        .leftdiv{
+          
+          grid-area: desc;
+          position: relative;
+          text-align: left;
+          
+        }
       .middlediv {
-        float: center;
-        vertical-align: middle;
-        text-align: center;
-        background-color: gray;
-        border: solid black;
-        text-align: top;
-        color: white;
-        font-family: "Grandstander";
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
+          grid-area: clothes;
+          position: relative;
+          text-align: left;
 
       }
       .rightdiv {
-        border: solid black;
-        vertical-align: top;
-        background-color: gray;
-        float: right;
-        text-align: right;
-        color: white;
-        font-family: "Grandstander";
-        width: 15%;
+        grid-area: data;
+        position: relative;
+
+        }
+      
+            p.weather {
+
+        font-size: 3rem;
+
+        }
+
+        p.temp {
+
+          font-size: 3rem;
+        }
+
+        p.location {     font-size: 1.5rem; }
+
+        p.recommendation {
+
+          font-size: 4rem;
+        }
       }
+      
       div {
+        /*
         background-color: 009900;
         width: 30%;
         padding: 1%;
-
+        */
       }
     </style>
   </head>
 
   <body>
+    <div class = "weather-info">
+      
+    <div class="middlediv">
+      <p class = "recommendation">
+        {% if nlc %}
+        Please enable Location Services, then Refresh the page
+        {% else %}
+        {{sentence}}
+        {% endif %}
+      </p>
+    </div>
+      
     <div class="leftdiv">
       <p class="weather">
         {% if nlc %}
@@ -140,17 +196,6 @@
         {{data["detailedForecast"]}}
       </p> -->
     </div>
-
-    <div class="middlediv">
-      <p class = "recommendation">
-        {% if nlc %}
-        Please enable Location Services, then Refresh the page
-        {% else %}
-        {{sentence}}
-        {% endif %}
-      </p>
-    </div>
-
     <div class="rightdiv">
       {% if nlc %}
       <p class="location">
@@ -173,7 +218,10 @@
       Pressure: {{data["current"]["pressure_mb"]}}mb
       </p>
       {% endif %}
-    </div>
+    </div>  
+      
+  </div>
+    
     
 
  .   <script>
